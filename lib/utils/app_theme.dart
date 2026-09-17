@@ -1,0 +1,156 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AppTheme {
+  // Color palette
+  static const Color primaryColor = Color(0xFF000000); // Black
+  static const Color primaryLight = Color(0xFF333333);
+  static const Color primaryDark = Color(0xFF000000);
+  static const Color accentColor = Color(0xFF000000); // Black accent
+  static const Color backgroundColor = Color(0xFF000000); // Pure black background
+  static const Color cardColor = Color(0xFF1E1E1E); // Dark grey cards
+  static const Color textPrimary = Colors.white;
+  static const Color textSecondary = Colors.white70;
+  static const Color dividerColor = Color(0xFF333333);
+
+  // Gradients
+  static const LinearGradient primaryGradient = LinearGradient(
+    colors: [primaryColor, primaryLight],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient accentGradient = LinearGradient(
+    colors: [accentColor, Color(0xFF444444)],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  // Text styles
+  static final TextStyle headingLarge = GoogleFonts.outfit(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: textPrimary,
+    letterSpacing: 0.5,
+  );
+
+  static final TextStyle headingMedium = GoogleFonts.outfit(
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+    color: textPrimary,
+    letterSpacing: 0.3,
+  );
+
+  static final TextStyle headingSmall = GoogleFonts.outfit(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: textPrimary.withOpacity(0.9),
+    letterSpacing: 0.2,
+  );
+
+  static final TextStyle bodyText = GoogleFonts.inter(
+    fontSize: 16,
+    color: textPrimary.withOpacity(0.8),
+    height: 1.5,
+  );
+
+  static final TextStyle caption = GoogleFonts.inter(
+    fontSize: 14,
+    color: textSecondary,
+    fontWeight: FontWeight.w500,
+  );
+
+  // Card decoration
+  static BoxDecoration cardDecoration = BoxDecoration(
+    color: cardColor,
+    borderRadius: BorderRadius.circular(16),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.05),
+        blurRadius: 10,
+        spreadRadius: 0,
+        offset: const Offset(0, 4),
+      ),
+    ],
+  );
+
+  // Button styles
+  static ButtonStyle primaryButtonStyle = ElevatedButton.styleFrom(
+    backgroundColor: Colors.white,
+    foregroundColor: Colors.black,
+    elevation: 2,
+    padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 16,
+      letterSpacing: 0.5,
+    ),
+  );
+
+  static ButtonStyle secondaryButtonStyle = ElevatedButton.styleFrom(
+    backgroundColor: Color(0xFF2C2C2C),
+    foregroundColor: Colors.white,
+    elevation: 1,
+    padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+      side: BorderSide(color: Colors.white10),
+    ),
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 16,
+      letterSpacing: 0.5,
+    ),
+  );
+
+  // Input decoration
+  static InputDecoration inputDecoration(String label) {
+    return InputDecoration(
+      labelText: label,
+      labelStyle: TextStyle(color: textSecondary),
+      filled: true,
+      fillColor: cardColor,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: dividerColor),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: dividerColor),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Colors.white, width: 2),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+    );
+  }
+
+  // App theme data
+  static ThemeData themeData = ThemeData(
+    primaryColor: primaryColor,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: primaryColor,
+      primary: primaryColor,
+      secondary: accentColor,
+      background: backgroundColor,
+    ),
+    scaffoldBackgroundColor: backgroundColor,
+    cardTheme: CardThemeData(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      elevation: 2,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(style: primaryButtonStyle),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: primaryColor,
+      foregroundColor: Colors.white,
+      elevation: 0,
+    ),
+    textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).copyWith(
+      headlineLarge: headingLarge,
+      headlineMedium: headingMedium,
+    ),
+    useMaterial3: true,
+  );
+}
