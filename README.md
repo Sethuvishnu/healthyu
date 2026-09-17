@@ -1,11 +1,10 @@
 # 🍳 Cal AI
 
-**Cal AI** is an AI-powered Recipe & Meal Planner app, developed as part of the **Mobile Application Design Lab** course at **Daffodil International University**.
+**Cal AI** is an AI-powered Recipe & Meal Planner app.
 
 The app features a **premium black aesthetic**, inspired by the sleek design of [calai.app](https://www.calai.app/), providing a modern and professional user experience.
 
-This app leverages the **Gemini API** to generate creative recipes, analyze nutritional content
-, and deliver personalized weekly meal plans based on user preferences.
+This app leverages the **Gemini API** to generate creative recipes, analyze nutritional content, and deliver personalized weekly meal plans based on user preferences.
 
 ---
 
@@ -67,38 +66,27 @@ For detailed documentation on setup, architecture, dependencies, and configurati
 
 ### ✅ About Section
 
-- ℹ️ App information and developer team credits.
+- ℹ️ App information and developer credits.
 
 ---
 
 ## 🧠 Tech Stack
 
-| Technology        | Usage                                          |
-| ----------------- | ---------------------------------------------- |
-| GetX              | State Management                               |
-| Firebase Auth      | User Authentication                            |
-| Cloud Firestore    | User Profiles & Recipe Persistence             |
-| SharedPreferences  | Local Settings Storage                         |
-| Gemini API         | AI Recipe, Meal Plan, and Nutrition Generation |
-| Image Picker       | Camera / Gallery Integration                   |
-| Printing Package   | PDF Meal Plan Export                           |
+| Technology         | Usage                                           |
+| ------------------ | ------------------------------------------------ |
+| GetX                | State Management                                |
+| Firebase Auth       | User Authentication                             |
+| Cloud Firestore     | User Profiles & Recipe Persistence              |
+| SharedPreferences   | Local Settings Storage                          |
+| Gemini API          | AI Recipe, Meal Plan, and Nutrition Generation  |
+| Image Picker        | Camera / Gallery Integration                    |
+| Printing Package    | PDF Meal Plan Export                            |
 
 ---
 
-## 👨‍💻 Development Team
+## 👨‍💻 Developer
 
-| Name              |
-| ----------------- |
-| Ovi Shekh         |
-| Junayed Bin Karim |
-| Mst. Azra Zerin   |
-
----
-
-## 🧑‍🏫 Instructor
-
-**Tanjir Ahmed Anik**  
-Lecturer, Daffodil International University
+**Vishnu**
 
 ---
 
@@ -107,8 +95,8 @@ Lecturer, Daffodil International University
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/ovishkh/Cal-AI.git
-    cd Cal-AI
+    git clone https://github.com/Sethuvishnu/healthyu.git
+    cd healthyu
     ```
 
 2. **Install dependencies**
@@ -119,7 +107,11 @@ Lecturer, Daffodil International University
 
 3. **Configure API key**
    - Get a Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Create `lib/config/api_keys.dart` with your key
+   - Create a `.env` file in the project root:
+     ```
+     GEMINI_API_KEY=your_gemini_api_key_here
+     ```
+   - Keys are loaded at runtime via `flutter_dotenv` and referenced through `lib/config/api_keys.dart` — never hardcoded in source.
    - See [API Documentation](docs/API_DOCUMENTATION.md) for details
 
 4. **Run the app**
@@ -132,7 +124,7 @@ Lecturer, Daffodil International University
    flutter build apk --release
    ```
    The APK will be available at `build/app/outputs/flutter-apk/app-release.apk`
-   
+
 For detailed instructions, see [Getting Started Guide](docs/GETTING_STARTED.md)
 
 ---
@@ -158,17 +150,13 @@ See [PROJECT_ARCHITECTURE.md](docs/PROJECT_ARCHITECTURE.md) for details.
 
 ## ⚠️ Notes
 
-- 🎯 This is a **student project** designed for **Android devices only**.
 - ☁️ **Cloud Database:** Integrated with **Firebase Firestore** for persistent storage.
-- 🔒 API keys are securely handled and **never hardcoded** in the repository...
-- 📁 Professional project structure with organized folders and documentation.
-- 🛠️ Ready for production development and team collaboration.
+- 🔒 API keys are loaded from a local `.env` file (git-ignored) and **never hardcoded** in the repository.
+- 📁 Organized project structure with clear separation of concerns.
+- 🛠️ Ready for continued development.
 
 ---
 
+## 🛠️ Development Roadmap
 
-
-
-## DEVELOPMENT 
-
--> upload any youtube video and get the ingredents 
+- [ ] Upload any YouTube video and get the ingredients
